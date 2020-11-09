@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cat Randomizer!</title>
+</head>
+<body>
+
+	<section layout:fragment="custom-content">
+
+		<!-- 		<h1>home.html</h1> -->
+
+
+		<!-- 		<p th:text="${cats}">bb</p> -->
+
+		<!-- 		<tr th:each="cat : ${cats}"> -->
+		<!-- 			<img th:src="${cat.url}" /> -->
+
+		<!-- 			<br>URL: -->
+		<!-- 			<td th:text="${cat.url}"></td> -->
+		<!-- 			<br>ID: -->
+		<!-- 			<td th:text="${cat.id}"></td> -->
+		<!-- 			<br>Width: -->
+		<!-- 			<td th:text="${cat.width}"></td> -->
+		<!-- 			<br>Height: -->
+		<!-- 			<td th:text="${cat.height}"></td> -->
+
+
+
+		<div class="container">
+			<div class="d-flex justify-content-center">
+
+				<div class="card bg-light mb-3" style="max-width: 50rem;"
+					th:each="cat : ${cats}">
+
+					<div class="card-header">
+						<b> Here's your cat! </b>
+					</div>
+					<div class="card-body">
+						<img class="img-fluid" th:src="${cat.url}"
+							style="max-height: 343px;" />
+						<h5 class="card-title">Meow!</h5>
+						URL:
+						<p th:text="${cat.url}"></p>
+						ID:
+						<p class="card-text" th:text="${cat.id}"></p>
+						WIDTH:
+						<p th:text="${cat.width}"></p>
+						HEIGHT:
+						<p th:text="${cat.height}"></p>
+
+
+						<a th:href="@{/}">
+							<p>
+								<button type="button" class="btn btn-primary btn-lg">Get
+									a new one!</button>
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- 		</div> -->
+	</section>
+</body>
+</html>

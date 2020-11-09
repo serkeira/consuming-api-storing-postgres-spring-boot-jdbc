@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cat Randomizer | History</title>
+</head>
+<body>
+
+	<section layout:fragment="custom-content">
+
+
+
+
+		<div class="container">
+			<div class="d-flex justify-content-center">
+
+
+
+
+				<table class="table">
+					<thead class="thead-light">
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">URL</th>
+							<th scope="col">WIDTH</th>
+							<th scope="col">HEIGHT</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cat : ${cats}">
+							<td th:text="${cat.id}">ID
+							</th>
+							<td th:text="${cat.url}">URL</td>
+							<td th:text="${cat.width}">WIDTH:</td>
+							<td th:text="${cat.height}">HEIGHT</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+
+
+
+
+
+
+			</div>
+
+<script>
+$(document).ready(function(){
+	  $('[data-toggle="popover"]').popover();
+	});
+</script>
+
+			<form th:action="@{/delete}" method="post">
+
+<a th:href="@{/delete}">
+
+				<button  type="submit" value="Delete" class="btn btn-primary btn-lg" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="Deleted!">Delete
+					All</button>
+</a>
+
+
+			</form>
+		</div>
+
+	</section>
+</body>
+</html>
