@@ -7,3 +7,5 @@ A Api utilizada é a TheCatApi, que retorna imagens aleatórias de gatos, bem co
 Utilização: Somente o api-client deve ser executado.
 Importante: Modifique o arquivo connection/ConnectionFactory.java de acordo com a sua própria instalação do PostgresSQL. 
 Então crie a tabela catsdb com os seguintes campos: id, url, width, height
+
+Veja o funcionamento em vídeo: https://www.linkedin.com/posts/cerqueiralucas_springboot-java-backend-activity-6731247955686264832-ABsR
